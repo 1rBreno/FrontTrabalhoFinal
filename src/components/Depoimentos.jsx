@@ -1,34 +1,24 @@
-function Depoimentos(){
-    return(
-        <>
-        <section className="depoimentos">
-            <h2>Quem já usa o OpenBoard</h2>
-            <p>Depoimentos de recrutadores e candidatos que ja fecharam vaga por aqui.</p>
+import DepoimentoCard from './DepoimentoCard'
+import depoimentos from '../data/depoimentos'
 
-            <div className="depoimentos__list">
-                <div>
-                    <p>"Encontrei minha vaga atual scrollando num sábado. Aplicação em dois cliques."</p>
-                    {/* <img src="" alt="avatar"/> */}
-                    <p>Lucas Vergara</p>
-                    <span>Frontend engineer - Betha</span>
-                </div>
-                <div>
-                    <p>"Encontrei minha vaga atual scrollando num sábado. Aplicação em dois cliques."</p>
-                    {/* <img src="" alt="avatar"/> */}
-                    <p>Lucas Vergara</p>
-                    <span>Frontend engineer - Betha</span>
-                </div>
-                <div>
-                    <p>"Encontrei minha vaga atual scrollando num sábado. Aplicação em dois cliques."</p>
-                    {/* <img src="" alt="avatar"/> */}
-                    <p>Lucas Vergara</p>
-                    <span>Frontend engineer - Betha</span>
-                </div>
-            </div>
-            
-        </section>
-        </>
-    )
+function Depoimentos() {
+  return (
+    <section className="depoimentos">
+      <h2>Quem já usa o OpenBoard</h2>
+      <p>Depoimentos de recrutadores e candidatos que já fecharam vaga por aqui.</p>
+
+      <div className="depoimentos__list">
+        {depoimentos.map((depoimento) => (
+          <DepoimentoCard
+            key={depoimento.id}
+            texto={depoimento.texto}
+            nome={depoimento.nome}
+            cargo={depoimento.cargo}
+          />
+        ))}
+      </div>
+    </section>
+  )
 }
 
 export default Depoimentos

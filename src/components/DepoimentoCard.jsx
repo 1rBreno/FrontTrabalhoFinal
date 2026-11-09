@@ -1,6 +1,12 @@
-// TODO (passo 2): card de um depoimento, recebendo texto, nome e cargo por props
-function DepoimentoCard() {
-  return null
+// Um depoimento: recebe os dados só por props
+function DepoimentoCard({ texto, nome, cargo }) {
+  return (
+    <div>
+      <p>"{texto}"</p>
+      <p>{nome}</p>
+      <span>{cargo}</span>
+    </div>
+  )
 }
 
 export default DepoimentoCard

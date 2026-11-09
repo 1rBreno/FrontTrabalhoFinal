@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import Hero from '../components/Hero'
 import Vagas from '../components/Vagas'
 import News from '../components/News'
@@ -13,7 +14,7 @@ function HomePage() {
         titulo="As melhores vagas em startups de tecnologia"
         subtitulo="Encontre oportunidades reais em empresas curadas. Sem cadastro, sem barreiras."
       >
-        <button id="btn-hero" className="btn">Publicar vaga $299</button>
+        <Link to="/publicar" id="btn-hero" className="btn">Publicar vaga $299</Link>
       </Hero>
 
       <main className="conteudo">
