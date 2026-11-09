@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import VagaCard from "./VagaCard"
 
 const TIPOS = ["Efetivo", "Estágio", "Temporário"]
@@ -17,8 +17,7 @@ function Vagas({ vagas }) {
     }
   }
 
-  function limpar(e) {
-    e.preventDefault() // o link não recarrega a página
+  function limpar() {
     setTiposMarcados([])
     setAreasMarcadas([])
   }
@@ -30,19 +29,25 @@ function Vagas({ vagas }) {
     return tipoOk && areaOk
   })
 
+  const total = vagasFiltradas.length
+
+  // título da aba acompanha o contador; roda de novo sempre que o total muda
+  useEffect(() => {
+    document.title = `${total} vagas | OpenBoard`
+  }, [total])
+
   return (
     <>
       <section className="vagas">
         <div className="vagas__header">
           <h2>Últimas Vagas</h2>
-          <span>
-            {vagasFiltradas.length} {vagasFiltradas.length === 1 ? "vaga" : "vagas"} - Atualizado agora
-          </span>
+          <span>{total} vagas - Atualizado agora</span>
         </div>
 
         {vagasFiltradas.map((vaga) => (
           <VagaCard
             key={vaga.id}
+            id={vaga.id}
             empresa={vaga.empresa}
             cargo={vaga.cargo}
             salario={vaga.salario}
@@ -59,7 +64,8 @@ function Vagas({ vagas }) {
       <aside className="filtros">
         <div className="filtros__header">
           <h3>Filtros</h3>
-          <a href="" onClick={limpar}>limpar</a>
+          {/* é uma ação, não navegação: por isso <button> e não <a href> */}
+          <button type="button" className="filtros__limpar" onClick={limpar}>limpar</button>
         </div>
 
         <div className="filtros__itens">

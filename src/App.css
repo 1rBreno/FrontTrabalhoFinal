@@ -192,3 +192,34 @@ footer{
         border-top: 1px solid #e5e5e3;
     }
 }
+/* ---- Ajustes da versão React ---- */
+
+/* logo virou <Link>: mantém a aparência de texto */
+.logo{
+    color: inherit;
+    text-decoration: none;
+}
+
+/* botões que viraram <Link> (Publicar vaga) */
+a.btn{
+    display: inline-block;
+    text-decoration: none;
+}
+
+/* "limpar" virou <button>: mantém a aparência de link */
+.filtros__limpar{
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* espaço entre os itens do Header e do Footer */
+header div,
+footer nav{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
