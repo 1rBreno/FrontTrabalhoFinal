@@ -1,10 +1,10 @@
-function Hero(){
+function Hero({titulo, subtitulo, children}){
     return (
         <>
         <section className="hero">
-            <h2>As melhores vagas em startups de tecnologia</h2>
-            <p>Encontre oportunidades reais em empresas curadas. Sem cadastro, sem barreiras.</p>
-            <button id="btn-hero" className="btn">Publicar vaga $299</button>
+            <h2>{titulo}</h2>
+            <p>{subtitulo}</p>
+            {children}
         </section>
         </>
     )
