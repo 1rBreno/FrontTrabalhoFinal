@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 
 import Header from './components/Header'
@@ -8,17 +7,22 @@ import News from './components/News'
 import Depoimentos from './components/Depoimentos'
 import Vagas from './components/Vagas'
 
-function App() {
-  const [count, setCount] = useState(0)
+import vagas from './data/vagas'
 
+function App() {
   return (
     <>
       
     <Header></Header>
-    <Hero></Hero>
+    <Hero
+      titulo="As melhores vagas em startups de tecnologia"
+      subtitulo="Encontre oportunidades reais em empresas curadas. Sem cadastro, sem barreiras."
+    >
+      <button id="btn-hero" className="btn">Publicar vaga $299</button>
+    </Hero>
 
     <main className="conteudo">
-      <Vagas></Vagas>
+      <Vagas vagas={vagas} />
     </main>
 
     <News></News>

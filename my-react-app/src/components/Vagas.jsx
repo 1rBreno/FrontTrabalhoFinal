@@ -1,55 +1,23 @@
-function Vagas(){
-    return (
-        <>
-        <section className="vagas">
+import VagaCard from "./VagaCard"
 
-            <div className="vagas__header">
-                <h2>Últimas Vagas</h2>
-                <span>7 vagas - Atualizado agora</span>
-            </div>
-
-            <div className="vagas__card">
-                <div className="vagas__avatar">V</div>
-                <div className="vagas__body">
-                    <small>Vercel</small>
-                    <p className="vagas__title">Full-stack Engineer</p>
-                    <span className="vagas__badge">R$ 20k-30k</span>
-                    <span className="vagas__badge vagas__badge--highlight">Remoto</span>
-                </div>
-                <div className="vagas__actions">
-                    <span>4h</span>
-                    <a href="">Candidatar-se</a>
-                </div>
-            </div>
-            
-            <div className="vagas__card">
-                <div className="vagas__avatar">V</div>
-                <div className="vagas__body">
-                    <small>Vercel</small>
-                    <p className="vagas__title">Full-stack Engineer</p>
-                    <span className="vagas__badge">R$ 20k-30k</span>
-                    <span className="vagas__badge vagas__badge--highlight">Remoto</span>
-                </div>
-                <div className="vagas__actions">
-                    <span>4h</span>
-                    <a href="">Candidatar-se</a>
-                </div>
-            </div>
-            
-            <div className="vagas__card">
-                <div className="vagas__avatar">V</div>
-                <div className="vagas__body">
-                    <small>Vercel</small>
-                    <p className="vagas__title">Full-stack Engineer</p>
-                    <span className="vagas__badge">R$ 20k-30k</span>
-                    <span className="vagas__badge vagas__badge--highlight">Remoto</span>
-                </div>
-                <div className="vagas__actions">
-                    <span>4h</span>
-                    <a href="">Candidatar-se</a>
-                </div>
-            </div>
-
+function Vagas({ vagas }) {
+return (
+    <>
+      <section className="vagas">
+        <div className="vagas__header">
+          <h2>Últimas Vagas</h2>
+          <span>{vagas.length} vagas - Atualizado agora</span>
+        </div>
+        {vagas.map((vaga) => (
+            <VagaCard
+                key={vaga.id}
+                empresa={vaga.empresa}
+                cargo={vaga.cargo}
+                salario={vaga.salario}
+                modelo={vaga.modelo}
+                publicada={vaga.publicada}
+            />
+        ))}
 
         </section>
         <aside className="filtros">
@@ -88,4 +56,4 @@ function Vagas(){
     )
 }
 
-export default Vagas
+export default Vagas;
