@@ -223,3 +223,75 @@ footer nav{
     align-items: center;
     gap: 16px;
 }
+
+/* mensagens de carregando / erro / sucesso */
+.aviso{
+    width: 100%;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.erro{
+    color: #b42318;
+    margin-top: 8px;
+}
+
+.sucesso{
+    color: #067647;
+}
+
+/* página de detalhe da vaga */
+.vaga-detalhe{
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.vaga-detalhe__badges{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: 16px 0 24px;
+}
+
+/* formulário de cadastro */
+.formulario{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 480px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.formulario label{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea{
+    padding: 12px;
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: normal;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+/* card da vaga publicada, na tela de confirmação */
+.cadastro-card{
+    max-width: 720px;
+    margin: 0 auto 32px;
+    text-align: left;
+}
+
+/* o quadrado com a inicial da empresa não encolhe em cards mais estreitos */
+.vagas__avatar{
+    flex-shrink: 0;
+}
