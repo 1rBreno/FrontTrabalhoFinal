@@ -1,1 +1,79 @@
-[]
+[
+  {
+    "id": 1,
+    "empresa": "Lumen",
+    "cargo": "Full-stack Engineer",
+    "salario": "R$ 20k-30k",
+    "modelo": "Remoto",
+    "tipo": "Efetivo",
+    "area": "Engenharia",
+    "publicada": "4h",
+    "descricao": "Desenvolvimento do produto de ponta a ponta, do banco de dados à interface. Stack com React, Node.js e PostgreSQL."
+  },
+  {
+    "id": 2,
+    "empresa": "SATC Labs",
+    "cargo": "Frontend Engineer",
+    "salario": "R$ 12k-18k",
+    "modelo": "Híbrido",
+    "tipo": "Efetivo",
+    "area": "Engenharia",
+    "publicada": "2h",
+    "descricao": "Construção de interfaces em React para a plataforma de cursos. Foco em acessibilidade e performance."
+  },
+  {
+    "id": 3,
+    "empresa": "Google",
+    "cargo": "Backend Engineer",
+    "salario": "R$ 25k-35k",
+    "modelo": "Remoto",
+    "tipo": "Efetivo",
+    "area": "Engenharia",
+    "publicada": "6h",
+    "descricao": "Criação e manutenção de APIs de alta disponibilidade. Experiência com Go ou Java é um diferencial."
+  },
+  {
+    "id": 4,
+    "empresa": "Nubank",
+    "cargo": "Product Designer",
+    "salario": "R$ 12k-18k",
+    "modelo": "Híbrido",
+    "tipo": "Efetivo",
+    "area": "Design",
+    "publicada": "1d",
+    "descricao": "Pesquisa com usuários e desenho das telas do aplicativo. Trabalho próximo de produto e engenharia."
+  },
+  {
+    "id": 5,
+    "empresa": "iFood",
+    "cargo": "Estágio em UX/UI",
+    "salario": "R$ 2,5k",
+    "modelo": "Remoto",
+    "tipo": "Estágio",
+    "area": "Design",
+    "publicada": "3h",
+    "descricao": "Apoio ao time de design na criação de protótipos no Figma. Ideal para quem está no meio da graduação."
+  },
+  {
+    "id": 6,
+    "empresa": "Stone",
+    "cargo": "Estágio em Desenvolvimento",
+    "salario": "R$ 2,8k",
+    "modelo": "Presencial",
+    "tipo": "Estágio",
+    "area": "Engenharia",
+    "publicada": "8h",
+    "descricao": "Participação no desenvolvimento de sistemas internos com mentoria de pessoas sêniores. Conhecimento básico de JavaScript."
+  },
+  {
+    "id": 7,
+    "empresa": "Hotmart",
+    "cargo": "Product Manager",
+    "salario": "R$ 15k-22k",
+    "modelo": "Remoto",
+    "tipo": "Temporário",
+    "area": "Gestão",
+    "publicada": "2d",
+    "descricao": "Contrato de seis meses para liderar o lançamento de um novo produto. Definição de prioridades junto aos times."
+  }
+]

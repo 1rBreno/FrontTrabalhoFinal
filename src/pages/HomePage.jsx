@@ -1,13 +1,33 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router'
 import Hero from '../components/Hero'
 import Vagas from '../components/Vagas'
 import News from '../components/News'
 import Depoimentos from '../components/Depoimentos'
-
-// TODO (passo 3): buscar as vagas da API pelo vagasService
-import vagas from '../data/vagas'
+import { buscarVagas } from '../services/vagasService'
 
 function HomePage() {
+  const [vagas, setVagas] = useState([])
+  const [carregando, setCarregando] = useState(true)
+  const [erro, setErro] = useState('')
+
+  // busca as vagas uma vez, quando a home aparece na tela ([] = sem dependências)
+  useEffect(() => {
+    async function carregar() {
+      try {
+        const dados = await buscarVagas()
+        setVagas(dados)
+      } catch {
+        setErro('Não foi possível carregar as vagas. Tente novamente mais tarde.')
+      } finally {
+        // roda dando certo ou errado: o carregamento terminou
+        setCarregando(false)
+      }
+    }
+
+    carregar()
+  }, [])
+
   return (
     <>
       <Hero
@@ -18,7 +38,11 @@ function HomePage() {
       </Hero>
 
       <main className="conteudo">
-        <Vagas vagas={vagas} />
+        {carregando && <p className="aviso">Carregando vagas...</p>}
+
+        {erro && <p className="aviso erro">{erro}</p>}
+
+        {!carregando && !erro && <Vagas vagas={vagas} />}
       </main>
 
       <News />
